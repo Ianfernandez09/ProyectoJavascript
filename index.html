@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto LM</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> 
+<body>
+<div id="cabecera">
+  <h1>FCT</h1>
+</div>
+    <div class="tab">
+        <button class="linkpestaña" onclick="AbrirPestaña(event, 'Ficha')" id="defecto">Ficha Semanal <i class="fa" id="icono">&#xf2c2;</i></button>
+        <button class="linkpestaña" onclick="AbrirPestaña(event, 'Profesores')">Profesores <i class="fa" id="icono">&#xf0c0;</i></button>
+        <button class="linkpestaña" onclick="AbrirPestaña(event, 'Empresas')">Empresas <i class="fa" id="icono">&#xf0f2;</i></button>
+        <button class="linkpestaña" onclick="AbrirPestaña(event, 'Alumnos')">Alumnos <i class="fa" id="icono">&#xf19d;</i></button>
+        <button class="linkpestaña" onclick="AbrirPestaña(event, 'Asignaciones')">Asignaciones <i class="fa" id="icono">&#xf02b;</i></button>
+      </div>
+
+      <div id="Ficha" class="contenido">
+        <h3>Ficha Semanal</h3>
+        <p> Aquí irán las fichas semanales.</p>
+        <select name="select" id="SeleccionarAlumno" onclick="autocompletar()">
+          <option></option>
+          <option id="Alumno01"></option>
+          <option id="Alumno02"></option>
+          <option id="Alumno03"></option>
+        </select>
+        <table id="Campos">
+        <th id="CampoImpar">Ciclo:</th>
+        <th id="CampoPar"><input type="text" id="CampoCiclo"></th>
+        <th id="CampoImpar">Tutor Laboral:</th>
+        <th id="CampoPar"><input type="text" id="CampoTutorL"></th>
+        </table>
+        <table id="Campos">
+        <th id="CampoImpar">Grado:</th>
+        <th id="CampoPar"><input type="text" id="CampoGrado"></th>
+        <th id="CampoImpar">Empresa:</th>
+        <th id="CampoPar"><input type="text" id="CampoEmpresa"></th>
+        </table>
+        <table id="Campos">
+        <th id="CampoImpar">Profesor:</th>
+        <th id="CampoPar"><input type="text" id="CampoProfesor"></th>
+        <th id="CampoImpar">Centro de Trabajo:</th>
+        <th id="CampoPar"><input type="text" id="CampoCentro"></th>
+        </table>
+      </div>
+      <div id="Profesores" class="contenido">
+        <h3>Profesores</h3>
+        <table id="tablaProfesor">
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+          </tr>
+          <tr>
+            <td>Enrique</td>
+            <td>Muñoz Collado</td>
+          </tr>
+          <tr>
+            <td>Álvaro</td>
+            <td>Recio Domínguez</td>
+          </tr>
+          <tr>
+            <td>Jesus</td>
+            <td>Palomero Monaguillo</td>
+          </tr>
+        </table>
+        <button id="boton" class="boton"> Añadir </button>
+        <div id="Modal1" class="modal">
+            <div class="contenido-modal">
+              <span class="close">&times;</span>
+              <h3>Añadir a un profesor</h3>
+                  <label for="nombreProfesor">Nombre: <input type="text" id="nombreProfesor"></label>
+                  <label for="apellidosProfesor">Apellidos: <input type="text" id="apellidosProfesor"></label><br><br>
+                <button id="Agregar" onclick="AgregarProfesor()"> Agregar </button>
+            </div>
+        </div>
+      </div>
+      
+      <div id="Empresas" class="contenido">
+        <h3>Empresas</h3>
+        <table id="tablaEmpresas">
+          <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Página Web</th>
+            <th>Persona de Contacto</th>
+            <th>Teléfono de Contacto</th>
+            <th>Tutor Laboral</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+            <td>AguasEstancadas S.A</td>
+            <td>C/Abrete sésamo nº1</td>
+            <td>www.aguasestancadas.es</td>
+            <td>Pepon</td>
+            <td>955876231</td>
+            <td>Pepe Junior</td>
+            <td>662211041</td>
+            <td>pepejr@aguasestan.es</td>
+          </tr>
+          <tr>
+            <td>EMASESA</td>
+            <td>C/Onomatopeya</td>
+            <td>www.emasesa.es</td>
+            <td>Jose luís</td>
+            <td>955876097</td>
+            <td>Kike</td>
+            <td>667452182</td>
+            <td>josema@emasesa.es</td>
+          </tr>
+          <tr>
+            <td>ALJARAFESA</td>
+            <td>C/Troya nº7</td>
+            <td>www.aljarafesa.es</td>
+            <td>Enrique</td>
+            <td>955874211</td>
+            <td>Alonso</td>
+            <td>696858747</td>
+            <td>alonso@aljarafesa.es</td>
+          </tr>
+        </table>
+        <button id="boton2" class="boton"> Añadir </button>
+        <div id="Modal2" class="modal">
+            <div class="contenido-modal">
+                <span class="close2">&times;</span>
+                <p>Nombre de la empresa: </p>
+                <label> Nombre Empresa: <input type="text" placeholder="Introduzca el nombre completo..." id="NombreEmpresa"></label><br><br>
+                <label> Dirección: <input type="text" placeholder="Introduce la dirección de la empresa..." id="DireccionEmpresa"></label><br><br>
+                <label> Página Web: <input type="text" id="PaginaEmpresa"></label><br><br>
+                <label> Persona de Contacto: <input type="text" placeholder="Introduzca el nombre completo..." id="PersonaContacto"></label><br><br>
+                <label> Número de Contacto: <input type="text" id="NumeroContacto"></label><br><br>
+                <label> Tutor Laboral: <input type="text" placeholder="Introduzca el nombre completo..." id="TutorLaboral"></label><br><br>
+                <label> TLF: <input type="text" id="TLF"></label><br><br>
+                <label> Email Tutor: <input type="text" id="EmailTutor"></label><br><br>
+                <label><button id="Agregar" onclick="AgregarEmpresa()"> Agregar </button>
+            </div>
+        </div>
+      </div>
+
+      <div id="Alumnos" class="contenido">
+        <h3>Alumnos</h3>
+        <table id="tablaAlumnos">
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Curso</th>
+            <th>Ciclo</th>
+          </tr>
+          <tr>
+            <td>Julián</td>
+            <td>Chaves Velasco</td>
+            <td>1º</td>
+            <td>ASIR</td>
+          </tr>
+          <tr>
+            <td>José</td>
+            <td>Vizuete Dominguez</td>
+            <td>2º</td>
+            <td>ASIR</td>
+          </tr>
+          <tr>
+            <td>Daniel</td>
+            <td>Kansas Gutiérrez</td>
+            <td>2º</td>
+            <td>ASIR</td>
+          </tr>
+        </table>
+        <button id="boton3" class="boton"> Añadir </button>
+        <div id="Modal3" class="modal">
+          <div class="contenido-modal">
+            <span class="close3">&times;</span>
+            <h3>Añadir a un alumno</h3>
+              <label for="nombreAlumno">Nombre: <input type="text" id="nombreAlumno"></label>
+              <label for="apellidosAlumno">Apellidos: <input type="text" id="apellidosAlumno"></label><br><br>
+              <label for="cursoAlumno">Curso: <input type="text" id="cursoAlumno" value="2º"></label>
+              <label for="cicloAlumno">Ciclo: <input type="text" id="cicloAlumno"></label><br><br>
+              <button id="Agregar" onclick="AgregarAlumno()"> Agregar </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="Asignaciones" class="contenido">
+        <h3>Asignaciones</h3>
+        <table id="tablaAsignaciones">
+          <tr>
+            <th>Nombre Alumno</th>
+            <th>Empresa (Tutor Laboral)</th>
+            <th>Tutor Docente</th>
+            <th>Fecha inicio</th>
+            <th>Fecha Fin</th>
+          </tr>
+          <tr>
+            <td id="Alumno01Nombre"></td>
+            <td id="Alumno01Empresa"></td>
+            <td id="Alumno01Tutord"></td>
+            <td id="Alumno01Fecini"></td>
+            <td id="Alumno01Fecfin"></td>
+          </tr>
+          <tr>
+            <td id="Alumno02Nombre"></td>
+            <td id="Alumno02Empresa"></td>
+            <td id="Alumno02Tutord"></td>
+            <td id="Alumno02Fecini"></td>
+            <td id="Alumno02Fecfin"></td>
+          </tr>
+          <tr>
+            <td id="Alumno03Nombre"></td>
+            <td id="Alumno03Empresa"></td>
+            <td id="Alumno03Tutord"></td>
+            <td id="Alumno03Fecini"></td>
+            <td id="Alumno03Fecfin"></td>
+          </tr>
+        </table>
+        <button id="boton4" class="boton"> Añadir </button>
+        <div id="Modal4" class="modal">
+            <div class="contenido-modal">
+                <span class="close4">&times;</span>
+                <h3> Añadir una asignación:</h3>
+                <label>Nombre del Alumno: <input type="text" id="nombreAsignacion"></label><br><br>
+                <label>Empresa (Tutor Laboral): <input type="text" id="empresaAsignacion"></label><br><br>
+                <label>Tutor Docente: <input type="text" id="TutorDocente"></label><br><br>
+                <label>Fecha Inicio: <input type="date" id="FechaInicio"></label><br><br>
+                <label>Fecha Final: <input type="date" id="FechaFinal"></label><br><br>
+                <button id="Agregar" onclick="AgregarAsignacion()"> Agregar </button>
+            </div>
+        </div>
+      </div>
+      <span id="Mensaje" style="display: none;"> Cambio efectuado correctamente </span>
+      <script src="JS/codigo.js"></script>
+</body>
+</html>
