@@ -175,7 +175,6 @@ h1 {
 
   /* Tabla profesores */
 
-
 /* Estilo de los botones de añadir */
 .boton {
   background-color: red;
@@ -223,18 +222,18 @@ h1 {
   width: 500px;
   height: auto;
   position: relative;
-  margin-left: 560px;
+  margin-left: 35%;
 }
 #tablaAlumnos {
   width:700px;
   height: auto;
   position: relative;
-  margin-left: 420px;
+  margin-left: 25%;
 }
 #tablaAsignaciones {
   width:1024px;
   position:relative;
-  margin-left: 250px;
+  margin-left: 15%;
 }
 #Mensaje {
   border: 1px solid black;
@@ -276,4 +275,41 @@ h1 {
 }
 #CampoPar {
   width: 200px;
+}
+#divHorasTotales {
+  margin:5%;
+}
+#HorasTotales {
+  width: 150px;
+}
+#FechaFicha {
+  width: 150px;
+  margin: 5px;
+}
+#CamposFicha {
+  width:1024px;
+  text-align: left;
+  margin-left:16%;
+  padding-top:10px;
+}
+#CamposFicha th {
+  background-color: rgb(0, 255, 242);
+  text-align: center;
+  width: 200px;
+  font-size: 20px;
+}
+#CamposFicha td {
+  text-align: center;
+  height: 100px;
+  background-color: rgb(231, 228, 228);
+  border-radius: 5%;
+}
+#CamposFicha tr {
+  width: 200px;
+}
+#CampoDia {
+  width:20%;
+}
+#CampoHoras {
+  width: 20%;
 }
