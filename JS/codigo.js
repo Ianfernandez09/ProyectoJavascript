@@ -265,18 +265,17 @@ function autocompletar() {
 var casilla = document.getElementById("SeleccionarAlumno").value;
 if ( casilla == Alumno01.nombre+" "+Alumno01.apellidos ) {
   document.getElementById("CampoCiclo").value = Alumno01.ciclo;
-  document.getElementById("CampoCiclo").readOnly = true;
+  document.getElementById("CampoCiclo").readOnly = true; // Hace que no se pueda escribir en el input
   document.getElementById("CampoGrado").value = "Superior";
-  document.getElementById("CampoGrado").readOnly = true;
+  document.getElementById("CampoGrado").readOnly = true; // Hace que no se pueda escribir en el input
   document.getElementById("CampoProfesor").value = Profesor01.nombre+" "+Profesor01.apellidos;
-  document.getElementById("CampoProfesor").readOnly = true;
+  document.getElementById("CampoProfesor").readOnly = true; // Hace que no se pueda escribir en el input
   document.getElementById("CampoTutorL").value = Empresa01.tutorlab;
-  document.getElementById("CampoTutorL").readOnly = true;
+  document.getElementById("CampoTutorL").readOnly = true; // Hace que no se pueda escribir en el input
   document.getElementById("CampoEmpresa").value = Empresa01.nombre;
-  document.getElementById("CampoEmpresa").readOnly = true;
+  document.getElementById("CampoEmpresa").readOnly = true; // Hace que no se pueda escribir en el input
   document.getElementById("CampoCentro").value = Empresa01.dirección;
-  document.getElementById("CampoCentro").readOnly = true;
-  console.log("ES ALUMNO01");
+  document.getElementById("CampoCentro").readOnly = true; // Hace que no se pueda escribir en el input
 }
 if ( casilla == Alumno02.nombre+" "+Alumno02.apellidos ) {
   document.getElementById("CampoCiclo").value = Alumno02.ciclo;
